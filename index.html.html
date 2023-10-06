@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="RegistrationForm.css">
+	<title></title>
+</head>
+
+<body>
+
+  
+
+    <section class="vh-100 bg-image">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container-fluid h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100 w-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Rider Details!</h2>
+  
+
+                <form method="POST" action="https://script.google.com/macros/s/AKfycbxFspE4qRCHJP40jMFI3r0kYzn7tvgFUvsBOyxwK-2Rbj4IPZw0RCd5vyycbRpMLl_qiQ/exec">
+
+                  <div class="row mb-4">
+                    <div class="col-md-4  form-outline">
+                      <input name="RiderName" type="text" id="riderName" class="form-control form-control-lg" />
+                      <label class="form-label" for="riderName">Rider Name</label>
+                      <p id="errName" style="display: none; color: red">Invalid Input</p>
+                    </div>
+                    <div class="col-md-4  form-outline">
+                      <input name="BookingNumber" type="number" id="bookingNum" class="form-control form-control-lg" />
+                      <label class="form-label" for="bookingNum">Booking No.</label>
+                      <p id="errBooking" style="display: none; color: red">Invalid Input</p>
+                    </div>
+                    <div class="col-md-4 form-outline">
+                      <input name="DeliveryDate" type="date" id="deliveryDate" class="form-control form-control-lg" name="deliveryDate">
+                      <label class="form-label" for="deliveryDate">Delivery Date:</label>
+                      <p id="errDelivery" style="display: none; color: red">Invalid Input</p>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                  <table name="table" id="editableTable">
+                      <thead>
+                          <tr>
+                            <th>Order Number</th>
+                            <th>Payment Method</th>
+                            <th>Amount</th>
+                            <th>Courier</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <!-- <tr>
+                            <td><input name="OrderNumber" type="number" id="orderNumber" class="form-control form-control-lg" /></td>
+                            <td><input name="PaymentMethod" type="text" id="paymentMethod" class="form-control form-control-lg" /></td>
+                            <td><input name="Amount" type="number" id="amount" class="form-control form-control-lg" /></td>
+                            <td><input name="Courier" type="text" id="courier" class="form-control form-control-lg" /></td>
+                            <td><button type="button" class="btn btn-success btn-block btn-sm gradient-custom-4 text-body" onclick="deleteRow(this)"><span class="glyphicon glyphicon-trash"></span></button></td>
+                          </tr> -->
+                          <tr>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td><button type="button" class="btn btn-success btn-block btn-sm gradient-custom-4 text-body" onclick="deleteRow(this)"><span class="glyphicon glyphicon-trash"></span></button></td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                  <br>
+                <div class="col-md-4  form-outline">
+                  <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" id="buttons" onclick="addRow()">Add Row</button>
+                  <br><br>
+                  <!-- <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" id="buttons" value="Store Data in Google Sheet"> -->
+                  <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" id="buttons" onclick="submitForm()">JSON to GSheet</button>
+                </div>
+              </form>
+                    
+
+
+                    <div class="row mb-4">
+
+                      <!-- <table id="editable-table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Order Number</th>
+                                <th>Payment Method</th>
+                                <th>Amount</th>
+                                <th>Courier</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td class="editable" contenteditable="true"></td>
+                                <td class="editable" contenteditable="true"></td>
+                                <td class="editable" contenteditable="true"></td>
+                                <td class="editable" contenteditable="true"></td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <script src="RegistrationForm.js"></script>
+
+</body>
+
+</html>
+
+
+
+                    <!-- <div class="d-flex justify-content-center mb-4">
+                      <button type="button"
+                      class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" id="reg_again" onclick="ConfirmOrders()">Submit Details</button>
+                    </div> -->
+
+<!-- 
+                      <div class="col-md-3 form-outline">
+                          <input type="number" id="orderNum" class="form-control form-control-lg" />
+                          <label class="form-label" for="orderNum">Order Number</label>
+                          <p id="errOrder" style="display: none; color: red">Invalid Input</p>
+                      </div>
+                      <div class="col-md-3 pb-2">
+                        <div class="form-outline">
+                          <input type="text" id="courier" class="form-control form-control-lg" />
+                          <label class="form-label" for="courier">Courier</label>
+                          <p id="errCourier" style="display: none; color: red">Invalid Input</p>
+                        </div>
+                      </div>
+                      <div class="col-md-3 mb-4 pb-2">
+                        <div class="form-outline">
+                          <input type="text" id="paymentMethod" class="form-control form-control-lg"/>
+                          <label class="form-label" for="paymentMethod">Mode Of Payment</label>
+                          <p id="errPayment" style="display: none; color: red">Invalid Input</p>
+                        </div>
+                      </div>
+                      <div class="col-md-3 form-outline mb-4">
+                        <input type="number" id="amount" class="form-control form-control-lg"/>
+                        <label class="form-label" for="amount">Amount</label>
+                        <p id="errAmount" style="display: none; color: red">Invalid Input</p>
+                      </div>
+                    </div> -->
+                  
+
+  
+                    <!-- <div class="d-flex justify-content-center mb-4">
+                        <button type="button"
+                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" onclick="AddOrder()">Add Order</button>
+                    </div> -->
+
+
+
+                    
+
+                    <!-- <div class="form-outline mb-4">
+                        <input type="text" id="uid" class="form-control form-control-lg" disabled />
+                        <label class="form-label" for="uid">Assigned User ID</label>
+                        <p id="uid_alert" style="display: none; color: red">Please remember your USER ID</p>                        
+                    </div> -->
+
+                    <!-- <p class="text-center text-muted mt-5 mb-0">Done in Registration? <a href="#!"
+                      class="fw-bold text-body" data-bs-toggle="modal" data-bs-target="#viewRecord" onclick="ViewOrders()"><u>View your records here</u></a></p> -->
+
+                      <!-- <div class="modal fade" id="viewRecord">
+                        <div class="modal-dialog modal-fullscreen">
+                          <div class="modal-content">
+                      
+                            Modal body
+                            <div class="modal-body">
+                              <section class="vh-100 bg-image"
+                                style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+                                <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+                                  <div class="container h-100">
+                                    <div class="row d-flex justify-content-center align-items-center h-100">
+                                      <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                                        <div class="card" style="border-radius: 15px;">
+                                          <div class="card-body p-5">
+                                            <h2 class="text-uppercase text-center mb-5">Records</h2>
+
+                                            <form>
+                                              <div class="form-outline mb-4">
+                                                <div class="form-outline mb-4">
+                                                  <div class="container">          
+                                                    <table class="table table-bordered" id="table_records">
+                                                      <thead>
+                                                        <tr>
+                                                          <th>Name</th>
+                                                          <th>Deliver Date</th>
+                                                          <th>Order Number</th>
+                                                          <th>Vendor</th>
+                                                          <th>Mode of Payment</th>
+                                                          <th>Amount</th>
+                                                        </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                      </tbody>
+                                                    </table>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </form>
+
+                                            <div class="d-flex justify-content-center mb-4">
+                                              <button type="button"
+                                              class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" id="reg_again" onclick="ConfirmOrders()">Submit Details</button>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+                            </div>
+                      
+                            Modal footer
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+                      
+                          </div>
+                        </div>
+
+  
+              </div> -->
